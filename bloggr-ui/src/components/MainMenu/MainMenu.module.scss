@@ -1,0 +1,15 @@
+.MainMenu {
+    flex-grow: 1;
+
+    .MenuButton {
+        margin-right: 16px;
+    };
+
+    .Title {
+        flex-grow: 0.1;
+    };
+
+    .RightSection {
+        display: none;
+    }
+}
