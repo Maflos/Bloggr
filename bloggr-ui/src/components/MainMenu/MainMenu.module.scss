@@ -1,15 +1,19 @@
 .MainMenu {
-    flex-grow: 1;
+    display: flex;
+    margin-left: 5%;
 
-    .MenuButton {
-        margin-right: 16px;
+    .NavDisplayFlex {
+        display: flex;
+        justify-content: space-between;
     };
 
-    .Title {
-        flex-grow: 0.1;
-    };
-
-    .RightSection {
-        display: none;
+    .LinkText {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
     }
+}
+
+.Grow {
+    flex-grow: 1,
 }

@@ -7,8 +7,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Home from './components/Home/Home';
-import Contact from './components/Contact/Contact';
+import Home from './pages/Home/Home';
+import Contact from './pages/Contact/Contact';
 
 const App: React.FC = () => {
   return (
