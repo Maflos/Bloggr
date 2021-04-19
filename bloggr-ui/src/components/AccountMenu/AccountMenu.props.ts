@@ -1,4 +1,5 @@
 export default interface AccountMenuProps {
-    openMenuEvent: null | HTMLElement;
+    handleMenuClose: () => void;
+    anchorEl: null | HTMLElement;
     menuId: string;
 }
