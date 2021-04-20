@@ -1,4 +1,4 @@
 export const Routes = [
-    { title: `Home`, path: `/home` },
-    { title: `Contact`, path: `/contact` },
+    { title: `home`, path: `/home` },
+    { title: `contact`, path: `/contact` },
 ];

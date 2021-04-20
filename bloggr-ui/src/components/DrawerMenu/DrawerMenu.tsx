@@ -11,6 +11,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './DrawerMenu.styles';
 import { Routes } from '../../common/Routes';
 import { NavLink } from 'react-router-dom';
+import { translate } from '../../common/LanguageUtils';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
   const classes = useStyles();
@@ -42,7 +43,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
           <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={'Mui-selected'}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>
-              {route.title}
+              {translate(route.title)}
             </ListItemText>
           </ListItem>
         ))}
