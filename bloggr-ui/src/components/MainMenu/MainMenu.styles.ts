@@ -3,10 +3,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         title: {
-            display: 'none',
-            [theme.breakpoints.up('sm')]: {
-                display: 'block',
-            },
+            display: 'block',
         },
         menuButton: {
             marginRight: '16px',
@@ -20,11 +17,15 @@ export const useStyles = makeStyles((theme: Theme) =>
                 display: 'flex',
             },
         },
-        sectionMobile: {
+        rightMenu: {
             display: 'flex',
-            [theme.breakpoints.up('md')]: {
-                display: 'none',
-            },
         },
+        navDisplayFlex: {
+            display: 'none',
+            [theme.breakpoints.up('md')]: {
+                display: 'flex',
+                justifyContent: 'space-between',
+            },
+        }
     }),
 );

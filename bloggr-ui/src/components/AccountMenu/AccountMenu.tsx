@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import styles from './AccountMenu.module.scss';
+import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountMenuProps from './AccountMenu.props';
