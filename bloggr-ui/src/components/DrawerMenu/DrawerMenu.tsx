@@ -10,7 +10,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './DrawerMenu.styles';
 import { Routes } from '../../common/Routes';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
   const classes = useStyles();
@@ -39,7 +39,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
     >
       <List>
         {Routes.map((route, index) => (
-          <ListItem button key={route.title} component={Link} to={route.path}>
+          <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={classes.activeRoute}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>
               {route.title}

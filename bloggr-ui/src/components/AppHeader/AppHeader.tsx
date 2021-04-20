@@ -7,7 +7,7 @@ import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
 import { Routes } from '../../common/Routes';
@@ -55,7 +55,7 @@ const AppHeader: React.FC = () => {
           <Box className={classes.mainMenu}>
             <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
               {Routes.map(({ title, path }) => (
-                <ListItem button key={title} component={Link} to={path}>
+                <ListItem button key={title} component={NavLink} to={path} activeClassName={classes.activeRoute}>
                   <ListItemText>{title}</ListItemText>
                 </ListItem>
               ))}
