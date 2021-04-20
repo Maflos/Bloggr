@@ -1,7 +1,6 @@
 import React from 'react';
 import DrawerMenuProps from './DrawerMenu.props';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -10,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './DrawerMenu.styles';
-import { routes } from '../../utils/Routes';
+import { Routes } from '../../common/Routes';
 import { Link } from 'react-router-dom';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
@@ -39,7 +38,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {routes.map((route, index) => (
+        {Routes.map((route, index) => (
           <ListItem button key={route.title} component={Link} to={route.path}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>

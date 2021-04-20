@@ -10,14 +10,14 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
-import styles from './MainMenu.module.scss';
-import { routes } from '../../utils/Routes';
+import { Routes } from '../../common/Routes';
+import { Constants } from '../../common/Constants';
 import { AccountCircle } from '@material-ui/icons';
-import { useStyles } from './MainMenu.styles';
+import { useStyles } from './AppHeader.styles';
 import AccountMenu from '../AccountMenu/AccountMenu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
 
-export default function MainMenu() {
+const AppHeader: React.FC = () => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -38,7 +38,7 @@ export default function MainMenu() {
   }
 
   return (
-    <div className={styles.Grow}>
+    <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -50,18 +50,18 @@ export default function MainMenu() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Bloggr
+            {Constants.appName}
           </Typography>
-          <Box className={styles.MainMenu}>
+          <Box className={classes.mainMenu}>
             <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
-              {routes.map(({ title, path }) => (
+              {Routes.map(({ title, path }) => (
                 <ListItem button key={title} component={Link} to={path}>
                   <ListItemText>{title}</ListItemText>
                 </ListItem>
               ))}
             </List>
           </Box>
-          <div className={styles.Grow} />
+          <div className={classes.grow} />
           <div className={classes.rightMenu}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -91,3 +91,5 @@ export default function MainMenu() {
     </div >
   );
 }
+
+export default AppHeader;

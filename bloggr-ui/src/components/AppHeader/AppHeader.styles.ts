@@ -2,8 +2,15 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        mainMenu: {
+            display: 'flex',
+            marginLeft: '5%',
+        },
         title: {
             display: 'block',
+        },
+        grow: {
+            flexGrow: 1,
         },
         menuButton: {
             marginRight: '16px',

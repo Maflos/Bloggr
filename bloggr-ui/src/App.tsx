@@ -1,32 +1,15 @@
 import React from 'react';
-import './App.scss';
-import MainMenu from './components/MainMenu/MainMenu';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-import Home from './pages/Home/Home';
-import Contact from './pages/Contact/Contact';
+import { BrowserRouter as Router } from "react-router-dom";
+import AppHeader from './components/AppHeader/AppHeader';
+import AppBody from './components/AppBody/AppBody';
+import AppFooter from './components/AppFooter/AppFooter';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <MainMenu />
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
-      </div>
+      <AppHeader />
+      <AppBody />
+      <AppFooter />
     </Router>
   );
 }
