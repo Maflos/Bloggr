@@ -55,7 +55,7 @@ const AppHeader: React.FC = () => {
           <Box className={classes.mainMenu}>
             <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
               {Routes.map(({ title, path }) => (
-                <ListItem button key={title} component={NavLink} to={path} activeClassName={classes.activeRoute}>
+                <ListItem button key={title} component={NavLink} to={path} activeClassName={'Mui-selected'}>
                   <ListItemText>{title}</ListItemText>
                 </ListItem>
               ))}

@@ -33,9 +33,6 @@ export const useStyles = makeStyles((theme: Theme) =>
                 display: 'flex',
                 justifyContent: 'space-between',
             },
-        },
-        activeRoute: {
-            backgroundColor: 'orange'
         }
     }),
 );

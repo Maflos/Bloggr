@@ -4,9 +4,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         list: {
             width: 250,
-        },
-        activeRoute: {
-            backgroundColor: 'orange'
         }
     }),
 );

@@ -39,7 +39,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
     >
       <List>
         {Routes.map((route, index) => (
-          <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={classes.activeRoute}>
+          <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={'Mui-selected'}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>
               {route.title}
