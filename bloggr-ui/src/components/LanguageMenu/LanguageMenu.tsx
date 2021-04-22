@@ -2,8 +2,8 @@ import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import LanguageMenuProps from './LanguageMenu.prosps';
-import { translate, getLanguage } from '../../common/LanguageUtils';
-import LANGUAGES from '../../common/LanguageConstants';
+import { translate, getLanguage } from '../../mocks/LanguageAPIMock';
+import LANGUAGES from '../../constants/Translations';
 
 const LanguageMenu: React.FC<LanguageMenuProps> = (
   {

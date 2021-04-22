@@ -9,9 +9,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './DrawerMenu.styles';
-import { Routes } from '../../common/Routes';
+import { Routes } from '../../constants/Routes';
 import { NavLink } from 'react-router-dom';
-import { translate } from '../../common/LanguageUtils';
+import { translate } from '../../mocks/LanguageAPIMock';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
   const classes = useStyles();

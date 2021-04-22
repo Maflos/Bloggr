@@ -1,4 +1,4 @@
-import LANGUAGES from '../../common/LanguageConstants';
+import LANGUAGES from '../../constants/Translations';
 
 export default interface LanguageMenuProps {
     anchorEl: null | HTMLElement;

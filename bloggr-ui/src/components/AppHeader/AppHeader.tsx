@@ -10,14 +10,14 @@ import LanguageIcon from '@material-ui/icons/Language';
 import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
-import { Routes } from '../../common/Routes';
-import { translate, setLanguage } from '../../common/LanguageUtils';
+import { Routes } from '../../constants/Routes';
+import { translate, setLanguage } from '../../mocks/LanguageAPIMock';
 import { AccountCircle } from '@material-ui/icons';
 import { useStyles } from './AppHeader.styles';
 import AccountMenu from '../AccountMenu/AccountMenu';
 import LanguageMenu from '../LanguageMenu/LanguageMenu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
-import LANGUAGES from '../../common/LanguageConstants';
+import LANGUAGES from '../../constants/Translations';
 
 const AppHeader: React.FC = () => {
   const classes = useStyles();
@@ -56,7 +56,7 @@ const AppHeader: React.FC = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"

@@ -5,7 +5,11 @@ export const ConstantsEN: { [key: string]: string } = {
     home: 'Home',
     contact: 'Contact',
     english: 'English',
-    romanian: 'Romanian'
+    romanian: 'Romanian',
+    social: 'Social media',
+    legal: 'Legal',
+    terms: 'Terms and conditions',
+    cookies: 'Cookies'
 }
 
 export const ConstantsRO: { [key: string]: string } = {
@@ -15,7 +19,11 @@ export const ConstantsRO: { [key: string]: string } = {
     home: 'Acasă',
     contact: 'Contact',
     english: 'Engleză',
-    romanian: 'Română'
+    romanian: 'Română',
+    social: 'Social',
+    legal: 'Legal',
+    terms: 'Termeni și condiții',
+    cookies: 'Politica de cookies'
 }
 
 enum LANGUAGES {

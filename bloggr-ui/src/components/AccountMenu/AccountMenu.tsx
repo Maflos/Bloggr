@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountMenuProps from './AccountMenu.props';
-import { translate } from '../../common/LanguageUtils';
+import { translate } from '../../mocks/LanguageAPIMock';
 
 const AccountMenu: React.FC<AccountMenuProps> = ({ menuId, handleMenuClose, anchorEl }: AccountMenuProps) => {
 
