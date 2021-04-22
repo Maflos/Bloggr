@@ -17,10 +17,10 @@ const AppFooter: React.FC = () => {
       <Container maxWidth="md">
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <Typography align={'center'} variant={'h5'} className={classes.sectionTitle}>{translate('legal')}</Typography>
+            <Typography align={'center'} variant={'h6'} className={classes.sectionTitle}>{translate('legal')}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography align={'center'} variant={'h5'} className={classes.sectionTitle}>{translate('social')}</Typography>
+            <Typography align={'center'} variant={'h6'} className={classes.sectionTitle}>{translate('social')}</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography align={'center'}>{translate('terms')}</Typography>

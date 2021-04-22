@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
+import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import MailIcon from '@material-ui/icons/Mail';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -25,6 +26,7 @@ const AppHeader: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [drawerState, setDrawerState] = React.useState<boolean>(false);
   const [transMenuAnchorEl, setTransMenuAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
 
   const menuId = 'primary-account-menu';
   const transMenuId = 'primary-translation-menu';
@@ -35,6 +37,7 @@ const AppHeader: React.FC = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    setLoggedIn(true);
   };
 
   const handleTranslationMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -79,32 +82,41 @@ const AppHeader: React.FC = () => {
             </List>
           </Box>
           <div className={classes.grow} />
-          <div className={classes.rightMenu}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              aria-label="language selector"
-              aria-controls={transMenuId}
-              aria-haspopup="true"
-              onClick={handleTranslationMenuOpen}
-              color="inherit"
-            >
-              <LanguageIcon />
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
+          {
+            loggedIn ? (
+              <div className={classes.rightMenu}>
+                <Button variant="contained" color="primary" component={NavLink} to="/login">Log In</Button>
+                <Button variant="outlined" component={NavLink} to="/register">Register</Button>
+              </div>
+            ) : (
+              <div className={classes.rightMenu}>
+                <IconButton aria-label="show 4 new mails" color="inherit">
+                  <Badge badgeContent={4} color="secondary">
+                    <MailIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton
+                  aria-label="language selector"
+                  aria-controls={transMenuId}
+                  aria-haspopup="true"
+                  onClick={handleTranslationMenuOpen}
+                  color="inherit"
+                >
+                  <LanguageIcon />
+                </IconButton>
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+              </div>
+            )
+          }
         </Toolbar>
       </AppBar>
       <AccountMenu menuId={menuId} handleMenuClose={handleMenuClose} anchorEl={anchorEl} />

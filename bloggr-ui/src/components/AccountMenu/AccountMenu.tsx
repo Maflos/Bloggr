@@ -23,6 +23,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ menuId, handleMenuClose, anch
       onClose={closeMenu}>
       <MenuItem onClick={closeMenu}>{translate('profile')}</MenuItem>
       <MenuItem onClick={closeMenu}>{translate('myAccount')}</MenuItem>
+      <MenuItem onClick={closeMenu}>{translate('logOut')}</MenuItem>
     </Menu>
   );
 }
