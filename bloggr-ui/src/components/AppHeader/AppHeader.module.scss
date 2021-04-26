@@ -18,28 +18,21 @@
 }
 
 .menuButton {
-    margin-right: 16px;
-}
-
-.sectionDesktop {
     display: none;
 }
 
 .navDisplayFlex {
-    display: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media only screen and (max-width: $md) {
     .menuButton {
-        display: none;
-    }
-
-    .sectionDesktop {
+        margin-right: spacing(1);
         display: flex;
     }
 
     .navDisplayFlex {
-        display: flex;
-        justify-content: space-between;
+        display: none;
     }
 }

@@ -65,14 +65,17 @@ const AppHeader: React.FC = () => {
     <div className={styles.grow}>
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={styles.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => { setDrawerState(true); }}>
-            <MenuIcon />
-          </IconButton>
+          <Box className={styles.menuButton}>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              onClick={() => { setDrawerState(true); }}>
+              <MenuIcon />
+            </IconButton>
+          </Box>
+
+
           <Typography className={styles.title} variant="h6" noWrap>
             {translate('appName', selectedLanguage)}
           </Typography>
