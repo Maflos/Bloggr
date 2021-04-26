@@ -14,8 +14,9 @@
 }
 
 .rightMenu {
-    display: 'flex',
+    display: flex,
 }
+
 .menuButton {
     margin-right: 16px;
 }
@@ -30,7 +31,7 @@
 
 @media only screen and (max-width: $md) {
     .menuButton {
-        display: none,
+        display: none;
     }
 
     .sectionDesktop {

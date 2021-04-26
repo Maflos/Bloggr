@@ -12,8 +12,12 @@ import styles from './DrawerMenu.module.scss';
 import { Routes } from '../../constants/Routes';
 import { NavLink } from 'react-router-dom';
 import { translate } from '../../mocks/LanguageAPIMock';
+import { selectLanguage } from '../../redux/reducers/headerSlice';
+import { useAppSelector } from '../../redux/hooks';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
+
+  const selectedLanguage = useAppSelector(selectLanguage);
 
   const toggleDrawer = (open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent,
@@ -42,7 +46,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
           <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={'Mui-selected'}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>
-              {translate(route.title)}
+              {translate(route.title, selectedLanguage)}
             </ListItemText>
           </ListItem>
         ))}

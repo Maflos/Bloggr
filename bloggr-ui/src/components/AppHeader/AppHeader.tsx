@@ -12,15 +12,20 @@ import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
 import { Routes } from '../../constants/Routes';
-import { translate, setLanguage } from '../../mocks/LanguageAPIMock';
+import { translate } from '../../mocks/LanguageAPIMock';
 import { AccountCircle } from '@material-ui/icons';
 import styles from './AppHeader.module.scss';
 import AccountMenu from '../AccountMenu/AccountMenu';
 import LanguageMenu from '../LanguageMenu/LanguageMenu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
 import LANGUAGES from '../../constants/Translations';
+import { changeLanguage, selectLanguage } from '../../redux/reducers/headerSlice';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 const AppHeader: React.FC = () => {
+
+  const selectedLanguage = useAppSelector(selectLanguage);
+  const dispatch = useAppDispatch()
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [drawerState, setDrawerState] = React.useState<boolean>(false);
@@ -48,7 +53,7 @@ const AppHeader: React.FC = () => {
   }
 
   const handleSelectLanguage = (selectedLanguage: LANGUAGES) => {
-    setLanguage(selectedLanguage);
+    dispatch(changeLanguage(selectedLanguage));
     setTransMenuAnchorEl(null);
   }
 
@@ -69,13 +74,13 @@ const AppHeader: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography className={styles.title} variant="h6" noWrap>
-            {translate('appName')}
+            {translate('appName', selectedLanguage)}
           </Typography>
           <Box className={styles.mainMenu}>
             <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
               {Routes.map(({ title, path }) => (
                 <ListItem button key={title} component={NavLink} to={path} activeClassName={'Mui-selected'}>
-                  <ListItemText>{translate(title)}</ListItemText>
+                  <ListItemText>{translate(title, selectedLanguage)}</ListItemText>
                 </ListItem>
               ))}
             </List>

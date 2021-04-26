@@ -2,8 +2,10 @@ import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import LanguageMenuProps from './LanguageMenu.prosps';
-import { translate, getLanguage } from '../../mocks/LanguageAPIMock';
+import { translate } from '../../mocks/LanguageAPIMock';
 import LANGUAGES from '../../constants/Translations';
+import { selectLanguage as slctLanguage } from '../../redux/reducers/headerSlice';
+import { useAppSelector } from '../../redux/hooks';
 
 const LanguageMenu: React.FC<LanguageMenuProps> = (
   {
@@ -12,6 +14,8 @@ const LanguageMenu: React.FC<LanguageMenuProps> = (
     anchorEl,
     handleSelectLanguage
   }: LanguageMenuProps) => {
+
+  const selectedLanguage = useAppSelector(slctLanguage);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -32,8 +36,8 @@ const LanguageMenu: React.FC<LanguageMenuProps> = (
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={closeMenu}>
-      <MenuItem selected={LANGUAGES.EN === getLanguage()} onClick={selectLanguage(LANGUAGES.EN)}>{translate('english')}</MenuItem>
-      <MenuItem selected={LANGUAGES.RO === getLanguage()} onClick={selectLanguage(LANGUAGES.RO)}>{translate('romanian')}</MenuItem>
+      <MenuItem selected={LANGUAGES.EN === selectedLanguage} onClick={selectLanguage(LANGUAGES.EN)}>{translate('english', selectedLanguage)}</MenuItem>
+      <MenuItem selected={LANGUAGES.RO === selectedLanguage} onClick={selectLanguage(LANGUAGES.RO)}>{translate('romanian', selectedLanguage)}</MenuItem>
     </Menu>
   );
 }
