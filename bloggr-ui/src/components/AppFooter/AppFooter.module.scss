@@ -1,0 +1,11 @@
+@import '../../styles/defintions.scss';
+
+.footerContainer {
+    flex-grow: 1;
+    overflow: hidden;
+    padding: spacing(0) spacing(3);
+}
+
+.sectionTitle {
+    margin: spacing(1) auto;
+}

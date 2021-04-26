@@ -14,14 +14,13 @@ import { Box, ListItem, ListItemText } from '@material-ui/core';
 import { Routes } from '../../constants/Routes';
 import { translate, setLanguage } from '../../mocks/LanguageAPIMock';
 import { AccountCircle } from '@material-ui/icons';
-import { useStyles } from './AppHeader.styles';
+import styles from './AppHeader.module.scss';
 import AccountMenu from '../AccountMenu/AccountMenu';
 import LanguageMenu from '../LanguageMenu/LanguageMenu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
 import LANGUAGES from '../../constants/Translations';
 
 const AppHeader: React.FC = () => {
-  const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [drawerState, setDrawerState] = React.useState<boolean>(false);
@@ -58,22 +57,22 @@ const AppHeader: React.FC = () => {
   }
 
   return (
-    <div className={classes.grow}>
+    <div className={styles.grow}>
       <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            className={styles.menuButton}
             color="inherit"
             aria-label="open drawer"
             onClick={() => { setDrawerState(true); }}>
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={styles.title} variant="h6" noWrap>
             {translate('appName')}
           </Typography>
-          <Box className={classes.mainMenu}>
-            <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
+          <Box className={styles.mainMenu}>
+            <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
               {Routes.map(({ title, path }) => (
                 <ListItem button key={title} component={NavLink} to={path} activeClassName={'Mui-selected'}>
                   <ListItemText>{translate(title)}</ListItemText>
@@ -81,15 +80,15 @@ const AppHeader: React.FC = () => {
               ))}
             </List>
           </Box>
-          <div className={classes.grow} />
+          <div className={styles.grow} />
           {
             loggedIn ? (
-              <div className={classes.rightMenu}>
+              <div className={styles.rightMenu}>
                 <Button variant="contained" color="primary" component={NavLink} to="/login">Log In</Button>
                 <Button variant="outlined" component={NavLink} to="/register">Register</Button>
               </div>
             ) : (
-              <div className={classes.rightMenu}>
+              <div className={styles.rightMenu}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                   <Badge badgeContent={4} color="secondary">
                     <MailIcon />

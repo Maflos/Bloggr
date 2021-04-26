@@ -1,0 +1,9 @@
+$xs: 0px;
+$sm: 600px;
+$md: 960p;
+$lg: 1280px;
+$xl: 1920;
+
+@function spacing($level) {
+  @return $level * 16px;
+}

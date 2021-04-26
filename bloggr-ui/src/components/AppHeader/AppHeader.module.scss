@@ -1,0 +1,44 @@
+@import '../../styles/defintions.scss';
+
+.mainMenu {
+    display: flex;
+    margin-left: 5%;
+}
+
+.title {
+    display: block;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.rightMenu {
+    display: 'flex',
+}
+.menuButton {
+    margin-right: 16px;
+}
+
+.sectionDesktop {
+    display: none;
+}
+
+.navDisplayFlex {
+    display: none;
+}
+
+@media only screen and (max-width: $md) {
+    .menuButton {
+        display: none,
+    }
+
+    .sectionDesktop {
+        display: flex;
+    }
+
+    .navDisplayFlex {
+        display: flex;
+        justify-content: space-between;
+    }
+}

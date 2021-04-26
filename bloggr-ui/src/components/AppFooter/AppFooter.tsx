@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import { useStyles } from './AppFooter.styles';
+import styles from './AppFooter.module.scss';
 import { Container, Divider, Grid, IconButton, Link, Typography } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -8,19 +8,18 @@ import { Links } from '../../constants/Links';
 import { translate } from '../../mocks/LanguageAPIMock';
 
 const AppFooter: React.FC = () => {
-  const classes = useStyles();
   const copyright = '© ' + new Date().getFullYear() + ' ' + translate('appName');
 
   return (
-    <Box className={classes.footerContainer}>
+    <Box className={styles.footerContainer}>
       <Divider />
       <Container maxWidth="md">
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <Typography align={'center'} variant={'h6'} className={classes.sectionTitle}>{translate('legal')}</Typography>
+            <Typography align={'center'} variant={'h6'} className={styles.sectionTitle}>{translate('legal')}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography align={'center'} variant={'h6'} className={classes.sectionTitle}>{translate('social')}</Typography>
+            <Typography align={'center'} variant={'h6'} className={styles.sectionTitle}>{translate('social')}</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography align={'center'}>{translate('terms')}</Typography>
@@ -47,10 +46,10 @@ const AppFooter: React.FC = () => {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography className={classes.sectionTitle} align={'center'}>{translate('appName')}</Typography>
+            <Typography className={styles.sectionTitle} align={'center'}>{translate('appName')}</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography className={classes.sectionTitle} align={'center'}>{copyright}</Typography>
+            <Typography className={styles.sectionTitle} align={'center'}>{copyright}</Typography>
           </Grid>
         </Grid>
 

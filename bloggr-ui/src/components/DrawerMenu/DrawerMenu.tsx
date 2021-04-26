@@ -8,13 +8,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import { useStyles } from './DrawerMenu.styles';
+import styles from './DrawerMenu.module.scss';
 import { Routes } from '../../constants/Routes';
 import { NavLink } from 'react-router-dom';
 import { translate } from '../../mocks/LanguageAPIMock';
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) => {
-  const classes = useStyles();
 
   const toggleDrawer = (open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent,
@@ -33,7 +32,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
 
   const list = () => (
     <div
-      className={classes.list}
+      className={styles.list}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
