@@ -4,7 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import LanguageMenuProps from './LanguageMenu.prosps';
 import { translate } from '../../mocks/LanguageAPIMock';
 import LANGUAGES from '../../constants/Translations';
-import { selectLanguage as slctLanguage } from '../../redux/reducers/headerSlice';
+import { setLanguage } from '../../redux/reducers/headerSlice';
 import { useAppSelector } from '../../redux/hooks';
 
 const LanguageMenu: React.FC<LanguageMenuProps> = (
@@ -15,7 +15,7 @@ const LanguageMenu: React.FC<LanguageMenuProps> = (
     handleSelectLanguage
   }: LanguageMenuProps) => {
 
-  const selectedLanguage = useAppSelector(slctLanguage);
+  const selectedLanguage = useAppSelector(setLanguage);
 
   const isMenuOpen = Boolean(anchorEl);
 

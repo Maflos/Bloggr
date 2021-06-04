@@ -3,17 +3,28 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountMenuProps from './AccountMenu.props';
 import { translate } from '../../mocks/LanguageAPIMock';
-import { selectLanguage } from '../../redux/reducers/headerSlice';
+import { setLanguage } from '../../redux/reducers/headerSlice';
 import { useAppSelector } from '../../redux/hooks';
 
-const AccountMenu: React.FC<AccountMenuProps> = ({ menuId, handleMenuClose, anchorEl }: AccountMenuProps) => {
+const AccountMenu: React.FC<AccountMenuProps> = (
+  {
+    menuId,
+    handleMenuClose,
+    handleLogOut,
+    anchorEl
+  }: AccountMenuProps
+) => {
 
-  const selectedLanguage = useAppSelector(selectLanguage);
+  const selectedLanguage = useAppSelector(setLanguage);
 
   const isMenuOpen = Boolean(anchorEl);
 
   const closeMenu = () => {
     handleMenuClose();
+  }
+
+  const logOut = () => {
+    handleLogOut();
   }
 
   return (
@@ -27,7 +38,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ menuId, handleMenuClose, anch
       onClose={closeMenu}>
       <MenuItem onClick={closeMenu}>{translate('profile', selectedLanguage)}</MenuItem>
       <MenuItem onClick={closeMenu}>{translate('myAccount', selectedLanguage)}</MenuItem>
-      <MenuItem onClick={closeMenu}>{translate('logOut', selectedLanguage)}</MenuItem>
+      <MenuItem onClick={logOut}>{translate('logOut', selectedLanguage)}</MenuItem>
     </Menu>
   );
 }

@@ -6,12 +6,12 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Links } from '../../constants/Links';
 import { translate } from '../../mocks/LanguageAPIMock';
-import { selectLanguage } from '../../redux/reducers/headerSlice';
+import { setLanguage } from '../../redux/reducers/headerSlice';
 import { useAppSelector } from '../../redux/hooks';
 
 const AppFooter: React.FC = () => {
 
-  const selectedLanguage = useAppSelector(selectLanguage);
+  const selectedLanguage = useAppSelector(setLanguage);
 
   const copyright = '© ' + new Date().getFullYear() + ' ' + translate('appName', selectedLanguage);
 
