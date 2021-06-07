@@ -7,7 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink, useHistory } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
-import { Routes } from '../../constants/Routes';
+import { AppRoutes } from '../../constants/Routes';
 import { translate } from '../../mocks/LanguageAPIMock';
 import styles from './AppHeader.module.scss';
 import AccountMenu from '../AccountMenu/AccountMenu';
@@ -34,6 +34,7 @@ const AppHeader: React.FC = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    history.push('account');
   };
 
   const handleLogOut = () => {
@@ -82,7 +83,7 @@ const AppHeader: React.FC = () => {
           </Typography>
           <Box className={styles.mainMenu}>
             <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
-              {Routes.map(({ title, path }) => (
+              {AppRoutes.map(({ title, path }) => (
                 <ListItem button key={title} component={NavLink} to={path} activeClassName={'Mui-selected'}>
                   <ListItemText>{translate(title, selectedLanguage)}</ListItemText>
                 </ListItem>

@@ -9,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import styles from './DrawerMenu.module.scss';
-import { Routes } from '../../constants/Routes';
+import { AppRoutes } from '../../constants/Routes';
 import { NavLink } from 'react-router-dom';
 import { translate } from '../../mocks/LanguageAPIMock';
 import { setLanguage } from '../../redux/reducers/headerSlice';
@@ -42,7 +42,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ drawerState, setDrawerState }) 
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {Routes.map((route, index) => (
+        {AppRoutes.map((route, index) => (
           <ListItem button key={route.title} component={NavLink} to={route.path} activeClassName={'Mui-selected'}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText>
