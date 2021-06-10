@@ -1,6 +1,6 @@
 export const ConstantsEN: { [key: string]: string } = {
     appName: 'Bloggr',
-    profile: 'Profile',
+    settings: 'Settings',
     myAccount: 'My Account',
     logOut: 'Log out',
     home: 'Home',
@@ -15,7 +15,7 @@ export const ConstantsEN: { [key: string]: string } = {
 
 export const ConstantsRO: { [key: string]: string } = {
     appName: 'Bloggr',
-    profile: 'Profil',
+    settings: 'Setări',
     myAccount: 'Contul meu',
     logOut: 'Deconectați-vă',
     home: 'Acasă',

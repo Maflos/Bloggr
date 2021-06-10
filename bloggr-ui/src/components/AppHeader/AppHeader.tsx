@@ -34,13 +34,19 @@ const AppHeader: React.FC = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    history.push('account');
   };
 
   const handleLogOut = () => {
     setAnchorEl(null);
     dispatch(changeLogInState(false));
-    history.push('login');
+  }
+
+  const handleGoToProfile = () => {
+    setAnchorEl(null);
+  }
+
+  const handleGoToSettings = () => {
+    setAnchorEl(null);
   }
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -103,6 +109,8 @@ const AppHeader: React.FC = () => {
         menuId={menuId}
         handleMenuClose={handleMenuClose}
         handleLogOut={handleLogOut}
+        handleGoToProfile={handleGoToProfile}
+        handleGoToSettings={handleGoToSettings}
         anchorEl={anchorEl} />
       <LanguageMenu
         menuId={transMenuId}

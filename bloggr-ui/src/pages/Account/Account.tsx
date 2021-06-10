@@ -19,6 +19,9 @@ const Account: React.FC = () => {
   const [value, setValue] = React.useState(0);
   const { path, url } = useRouteMatch();
 
+  console.log(path);
+  console.log(url);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -41,9 +44,9 @@ const Account: React.FC = () => {
         textColor="secondary"
         aria-label="icon label tabs example">
 
-        <Tab icon={<NotesIcon />} label="Posts" {...a11yProps(0)} component={Link} to={`${path}${AccountRoute.children[0].path}`} />
-        <Tab icon={<CategoryIcon />} label="Categories"  {...a11yProps(1)} component={Link} to={`${path}${AccountRoute.children[1].path}`} />
-        <Tab icon={<MoreHorizIcon />} label="Others" {...a11yProps(2)} component={Link} to={`${path}${AccountRoute.children[2].path}`} />
+        <Tab icon={<NotesIcon />} label="Posts" {...a11yProps(0)} component={Link} to={`${url}${AccountRoute.children[0].path}`} />
+        <Tab icon={<CategoryIcon />} label="Categories"  {...a11yProps(1)} component={Link} to={`${url}${AccountRoute.children[1].path}`} />
+        <Tab icon={<MoreHorizIcon />} label="Others" {...a11yProps(2)} component={Link} to={`${url}${AccountRoute.children[2].path}`} />
       </Tabs>
 
       <Switch>

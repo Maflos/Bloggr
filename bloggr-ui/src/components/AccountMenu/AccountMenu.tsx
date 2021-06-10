@@ -5,12 +5,15 @@ import AccountMenuProps from './AccountMenu.props';
 import { translate } from '../../mocks/LanguageAPIMock';
 import { setLanguage } from '../../redux/reducers/headerSlice';
 import { useAppSelector } from '../../redux/hooks';
+import { NavLink } from 'react-router-dom';
 
 const AccountMenu: React.FC<AccountMenuProps> = (
   {
     menuId,
     handleMenuClose,
     handleLogOut,
+    handleGoToProfile,
+    handleGoToSettings,
     anchorEl
   }: AccountMenuProps
 ) => {
@@ -27,6 +30,14 @@ const AccountMenu: React.FC<AccountMenuProps> = (
     handleLogOut();
   }
 
+  const goToProfile = () => {
+    handleGoToProfile();
+  }
+
+  const goToSettings = () => {
+    handleGoToSettings();
+  }
+
   return (
     <Menu
       anchorEl={anchorEl}
@@ -36,9 +47,9 @@ const AccountMenu: React.FC<AccountMenuProps> = (
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={closeMenu}>
-      <MenuItem onClick={closeMenu}>{translate('profile', selectedLanguage)}</MenuItem>
-      <MenuItem onClick={closeMenu}>{translate('myAccount', selectedLanguage)}</MenuItem>
-      <MenuItem onClick={logOut}>{translate('logOut', selectedLanguage)}</MenuItem>
+      <MenuItem onClick={goToSettings} component={NavLink} to="/settings">{translate('settings', selectedLanguage)}</MenuItem>
+      <MenuItem onClick={goToProfile} component={NavLink} to="/account">{translate('myAccount', selectedLanguage)}</MenuItem>
+      <MenuItem onClick={logOut} component={NavLink} to="/login">{translate('logOut', selectedLanguage)}</MenuItem>
     </Menu>
   );
 }
