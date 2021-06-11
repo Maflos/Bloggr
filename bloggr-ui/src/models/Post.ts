@@ -1,6 +1,6 @@
-import { Tag } from "./Tag";
+import Tag from "./Tag";
 
-export interface Post {
+export default interface Post {
     id: string;
     title: string;
     authorId: string;

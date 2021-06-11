@@ -1,12 +1,16 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { changeLogInState, setLogInState } from '../../redux/reducers/headerSlice';
+import { useAppDispatch } from '../../redux/hooks';
+import { changeLogInState, getLoggedUserAsync } from '../../redux/reducers/usersSlice';
 
 const Login: React.FC = () => {
-  const loggedIn = useAppSelector(setLogInState);
   const dispatch = useAppDispatch()
+
+  const login = () => {
+    dispatch(changeLogInState(true));
+    dispatch(getLoggedUserAsync());
+  }
 
   return (
     <div>
@@ -15,7 +19,7 @@ const Login: React.FC = () => {
         color="primary"
         component={NavLink}
         to="/home"
-        onClick={() => { dispatch(changeLogInState(true)); }}>
+        onClick={login}>
         Log In
       </Button>
     </div>

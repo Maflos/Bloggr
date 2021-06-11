@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import { Box, ListItem, ListItemText } from '@material-ui/core';
 import { AppRoutes } from '../../constants/Routes';
@@ -15,7 +15,8 @@ import LanguageMenu from '../LanguageMenu/LanguageMenu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
 import UserHeaderOptions from '../UserHeaderOptions/UserHeaderOptions';
 import LANGUAGES from '../../constants/Translations';
-import { changeLanguage, changeLogInState, setLanguage } from '../../redux/reducers/headerSlice';
+import { changeLanguage, setLanguage } from '../../redux/reducers/headerSlice';
+import { changeLogInState } from '../../redux/reducers/usersSlice';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 const AppHeader: React.FC = () => {
@@ -26,8 +27,6 @@ const AppHeader: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [drawerState, setDrawerState] = React.useState<boolean>(false);
   const [transMenuAnchorEl, setTransMenuAnchorEl] = React.useState<null | HTMLElement>(null);
-
-  const history = useHistory();
 
   const menuId = 'primary-account-menu';
   const transMenuId = 'primary-translation-menu';

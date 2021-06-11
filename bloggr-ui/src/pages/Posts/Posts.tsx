@@ -1,12 +1,12 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
 import Post from '../../components/Post/Post';
-import { getAllPosts } from '../../mocks/PostServiceMock';
+import PostMockService from '../../mocks/PostMockService';
 import styles from './Posts.module.scss';
 
 const Posts: React.FC = () => {
 
-  let posts = getAllPosts();
+  let posts = PostMockService.getAllPosts();
 
   return (
     <div className={styles.root}>

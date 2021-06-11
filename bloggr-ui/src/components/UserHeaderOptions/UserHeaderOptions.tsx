@@ -8,7 +8,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import UserHeaderOptionsProps from './UserHeaderOptions.props';
 import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
-import { setLogInState } from '../../redux/reducers/headerSlice';
+import { setLogInState } from '../../redux/reducers/usersSlice';
 
 const UserHeaderOptions: React.FC<UserHeaderOptionsProps> = ({
   transMenuId,
