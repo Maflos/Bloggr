@@ -8,7 +8,7 @@ import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
 import Contact from '../../pages/Contact/Contact';
-import Account from '../../pages/Account/Account';
+import Profile from '../../pages/Profile/Profile';
 import Settings from '../../pages/Settings/Settings';
 import { Box, Container } from '@material-ui/core';
 import styles from './AppBody.module.scss';
@@ -19,15 +19,16 @@ const AppBody: React.FC = () => {
     <Container maxWidth="xl">
       <Box className={styles.mainBox} mt={9}>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
           <Route exact path="/home" component={Home} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/account" component={Account} />
-          <Route path="/settings" component={Settings} />
+          <Route exact path="/contact" component={Contact} />
+          <Route path="/profiles" component={Profile} />
+          <Route exact path="/settings" component={Settings} />
+          <Redirect to="/" />
         </Switch>
       </Box>
     </Container>

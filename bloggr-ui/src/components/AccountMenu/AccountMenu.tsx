@@ -48,7 +48,7 @@ const AccountMenu: React.FC<AccountMenuProps> = (
       open={isMenuOpen}
       onClose={closeMenu}>
       <MenuItem onClick={goToSettings} component={NavLink} to="/settings">{translate('settings', selectedLanguage)}</MenuItem>
-      <MenuItem onClick={goToProfile} component={NavLink} to="/account">{translate('myAccount', selectedLanguage)}</MenuItem>
+      <MenuItem onClick={goToProfile} component={NavLink} to="/profiles">{translate('myProfile', selectedLanguage)}</MenuItem>
       <MenuItem onClick={logOut} component={NavLink} to="/login">{translate('logOut', selectedLanguage)}</MenuItem>
     </Menu>
   );

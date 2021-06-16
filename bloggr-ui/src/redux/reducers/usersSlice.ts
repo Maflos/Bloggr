@@ -40,7 +40,6 @@ export const usersSlice = createSlice({
             .addCase(getLoggedUserAsync.fulfilled, (state, action) => {
                 console.log('idle');
                 state.loggedUser = action.payload;
-                console.log(action.payload);
             });
     },
 });
@@ -48,5 +47,6 @@ export const usersSlice = createSlice({
 export const { changeLogInState } = usersSlice.actions;
 
 export const setLogInState = (state: RootState) => state.users.loggedIn;
+export const getLoggedUser = (state: RootState) => state.users.loggedUser;
 
 export default usersSlice.reducer;

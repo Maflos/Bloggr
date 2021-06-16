@@ -1,15 +1,15 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch, } from '../../redux/hooks';
 import { changeLogInState, getLoggedUserAsync } from '../../redux/reducers/usersSlice';
 
 const Login: React.FC = () => {
   const dispatch = useAppDispatch()
 
-  const login = () => {
+  const login = async () => {
     dispatch(changeLogInState(true));
-    dispatch(getLoggedUserAsync());
+    await dispatch(getLoggedUserAsync());
   }
 
   return (
