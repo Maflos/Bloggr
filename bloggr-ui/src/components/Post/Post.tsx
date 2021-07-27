@@ -1,10 +1,12 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
 import React from 'react';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import styles from './Post.module.scss';
 import PostProps from './Post.props';
 
 const Post: React.FC<PostProps> = (props: PostProps) => {
   const { post, ...other } = props;
+  const { path, url } = useRouteMatch();
 
   const index = Math.floor(Math.random() * 19) + 1;
   const imageName = 'dog' + index + '.jpg';
@@ -28,7 +30,7 @@ const Post: React.FC<PostProps> = (props: PostProps) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" component={NavLink} to={`${url}/${post.id}`}>
           View
         </Button>
         <Button size="small" color="primary">
@@ -38,7 +40,7 @@ const Post: React.FC<PostProps> = (props: PostProps) => {
           Delete
         </Button>
       </CardActions>
-    </Card>
+    </Card >
   );
 };
 

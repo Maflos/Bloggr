@@ -10,8 +10,10 @@ import Register from '../../pages/Register/Register';
 import Contact from '../../pages/Contact/Contact';
 import Profile from '../../pages/Profile/Profile';
 import Settings from '../../pages/Settings/Settings';
+import PostDetails from '../../pages/PostDetails/PostDetails';
 import { Box, Container } from '@material-ui/core';
 import styles from './AppBody.module.scss';
+import { ProfileRoutes } from '../../constants/Routes';
 
 const AppBody: React.FC = () => {
 
@@ -27,6 +29,7 @@ const AppBody: React.FC = () => {
           <Route exact path="/home" component={Home} />
           <Route exact path="/contact" component={Contact} />
           <Route path="/profiles" component={Profile} />
+          <Route exact path={ProfileRoutes.post.path} component={PostDetails} />
           <Route exact path="/settings" component={Settings} />
           <Redirect to="/" />
         </Switch>

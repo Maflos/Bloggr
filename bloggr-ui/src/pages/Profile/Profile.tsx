@@ -51,17 +51,17 @@ const Profile: React.FC = () => {
       </Tabs>
 
       <Switch>
-        <Route exact path={`${path}/:userId/${ProfileRoutes.posts.title}`}>
+        <Route exact path={ProfileRoutes.posts.path}>
           <TabPanel value={value} index={0}>
             <Posts />
           </TabPanel>
         </Route>
-        <Route exact path={`${path}/:userId/${ProfileRoutes.categories.title}`}>
+        <Route exact path={ProfileRoutes.categories.path}>
           <TabPanel value={value} index={1}>
             <Tags />
           </TabPanel>
         </Route>
-        <Route exact path={`${path}/:userId/${ProfileRoutes.others.title}`}>
+        <Route exact path={ProfileRoutes.others.path}>
           <TabPanel value={value} index={2}>
             <Others />
           </TabPanel>
